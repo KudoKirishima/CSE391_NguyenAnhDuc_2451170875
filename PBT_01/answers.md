@@ -185,4 +185,5 @@ Form này là form tìm kiếm trên trang
 - Các input types được dùng: `text`, `submit`
 
 **Nguồn tham chiếu: Phần 1, 2, 3**
+
 **Nguồn quan sát thực tế: Chrome DevTools (F12) trên `thegioididong.com`**
