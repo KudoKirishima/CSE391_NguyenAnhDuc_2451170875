@@ -47,8 +47,8 @@ Tóm gọn lại có ít nhất là 4 lỗi như sau:
 - Dùng thẻ `<div class="footer">` thay vì thẻ `<footer>`
 
 Để sửa lại thì sẽ thành:
-```html
 
+```html
 <header>
     <div class="logo">ShopTLU</div>
     <nav>
@@ -56,11 +56,15 @@ Tóm gọn lại có ít nhất là 4 lỗi như sau:
         <div><a href="/products">Sản phẩm</a></div>
     </nav>
 </header>
+
 <main>
     <div class="product">
         <div class="title">iPhone 16 Pro</div>
         <div class="price">25.990.000đ</div>
-        <div class="image"><img src="iphone.jpg"></div>
+        <div class="image">
+            <img src="iphone.jpg" alt="Ảnh sản phẩm iPhone 16 Pro">
+        </div>
     </div>
 </main>
+
 <footer>© 2026 ShopTLU</footer>
