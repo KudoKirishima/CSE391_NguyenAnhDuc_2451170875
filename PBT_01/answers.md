@@ -162,9 +162,9 @@ c) Thẻ `<section>`
 Thẻ `<section>` được dùng để chia nội dung thành từng phần trong thân trang. Theo em, đây là cách dùng hợp lý để tổ chức nội dung
 
 - 3 thẻ semantic HTML5 mà trang đó sử dụng
-1. Thẻ `<header>` — nằm ở phần đầu trang
-2. Thẻ `<footer>` — nằm ở phần cuối trang
-3. Thẻ `<section>` — nằm ở khu vực nội dung trong thân trang
+1. Thẻ `<header>`  nằm ở phần đầu trang
+2. Thẻ `<footer>`  nằm ở phần cuối trang
+3. Thẻ `<section>`  nằm ở khu vực nội dung trong thân trang
 
 2. Phân tích table
 
@@ -172,8 +172,8 @@ Thẻ `<section>` được dùng để chia nội dung thành từng phần tron
 
 Table này hiển thị nội dung về **thông số (ký hiệu) và tên đầy đủ** trong phần nội dung của trang
 
-- Có dùng `<thead>`: **Có**
-- Có dùng `<tbody>`: **Có**
+- Có dùng `<thead>` 
+- Có dùng `<tbody>`
 
 3. Phân tích form
 
