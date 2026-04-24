@@ -70,7 +70,7 @@ Tóm gọn lại có ít nhất là 4 lỗi như sau:
 <footer>© 2026 ShopTLU</footer>
 ```
 
-**Nguồn tham chiếu: Chương 4 của tuần 1, phần 1, phần 2, phần 3 và phần 7, phần 9**
+**Nguồn tham chiếu: Chương 4 của tuần 1 Phần 1, phần 2, phần 3 và phần 7, phần 9**
 
 # Câu A3 — Block vs Inline
 
@@ -82,7 +82,7 @@ Text C Text D
 Hộp 3
 ```
 
-**Nguồn tham chiếu: Phần 3, phần 9**
+**Nguồn tham chiếu: Chương 4 của tuần 1 Phần 3, phần 9**
 
 # Câu A4 — Table
 
@@ -102,7 +102,7 @@ Ba phần này giúp bảng rõ ràng hơn, dễ đọc hơn và dễ style hơn
 - Code sẽ khó sửa và khó bảo trì hơn
 - Làm layout nên dùng CSS Flexbox hoặc CSS Grid sẽ hợp lý hơn
 
-**Nguồn tham chiếu: Chương 5 Phần 3, 5, 7, 9**
+**Nguồn tham chiếu: Chương 5 của tuần 1 Phần 3, 5, 7, 9**
 
 # Câu B3 - Debug HTML
 ```text
@@ -184,7 +184,7 @@ Form này là form tìm kiếm trên trang
 - Form đó có `action`: `/tim-kiem`
 - Các input types được dùng: `text`, `submit`
 
-**Nguồn tham chiếu: Chương 4 Phần 1, 2, 3 và Chương 5 Phần 3**
+**Nguồn tham chiếu: Chương 4 của tuần 1 Phần 1, 2, 3 và Chương 5 của tuần 1 Phần 3**
 
 **Nguồn quan sát thực tế: Chrome DevTools (F12) trên `thegioididong.com`**
 
@@ -315,4 +315,4 @@ Ví dụ cụ thể là một trang bán hàng. Nếu mỗi sản phẩm đượ
 
 Tuy nhiên, không phải lúc nào cũng phải tránh `<div>`. Theo em, `<div>` vẫn phù hợp khi chỉ cần một khối để nhóm nội dung phục vụ CSS hoặc layout, ví dụ như một wrapper để căn giữa nội dung hoặc chia bố cục đơn giản
 
-**Nguồn tham chiếu: Chương 4 Phần 1, 7, 9**
+**Nguồn tham chiếu: Chương 4 của tuần 1 Phần 1, 7, 9**
