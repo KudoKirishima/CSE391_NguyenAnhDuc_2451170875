@@ -38,15 +38,16 @@ Theo em, trang web bị đánh giá SEO thấp là do đang dùng quá nhiều t
 
 Tóm gọn lại có ít nhất là 4 lỗi như sau:
 
-- Dùng thẻ <div class="header"> cho đầu trang thay vì thẻ <header>
+- Dùng thẻ `<div class="header">` cho đầu trang thay vì thẻ `<header>`
 
-- Dùng thẻ <div class = "menu"> thay vì thẻ <nav>
+- Dùng thẻ `<div class = "menu">` thay vì thẻ `<nav>`
 
-- Dùng thẻ <div class="main"> thay vì thẻ <main>
+- Dùng thẻ `<div class="main">` thay vì thẻ `<main>`
 
-- Dùng thẻ <div class="footer"> thay vì thẻ <footer>
+- Dùng thẻ `<div class="footer">` thay vì thẻ `<footer>`
 
 Để sửa lại thì sẽ thành:
+```html
 
 <header>
     <div class="logo">ShopTLU</div>
@@ -63,4 +64,3 @@ Tóm gọn lại có ít nhất là 4 lỗi như sau:
     </div>
 </main>
 <footer>© 2026 ShopTLU</footer>
-
