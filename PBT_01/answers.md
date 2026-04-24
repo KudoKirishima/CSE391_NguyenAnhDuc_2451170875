@@ -34,7 +34,7 @@ Bước 8: Cuối cùng, trình duyệt thực hiện "Layout → Paint → Comp
 
 # Câu A2 - Semantic HTML
 
-Theo em, trang web bị đánh giá SEO thấp là do đang dùng quá nhiều thẻ <div> cho những phần không cần nhất thiết phải dùng hoặc đã có ý nghĩa rõ ràng như: đầu trang (header), menu (nav), ...
+Theo em, trang web bị đánh giá SEO thấp là do đang dùng quá nhiều thẻ `<div>` cho những phần không cần nhất thiết phải dùng hoặc đã có ý nghĩa rõ ràng như: đầu trang (header), menu (nav), ...
 
 Tóm gọn lại có ít nhất là 4 lỗi như sau:
 
@@ -88,11 +88,11 @@ Hộp 3
 
 1. Phân biệt `<thead>`, `<tbody>`, `<tfoot>`
 
-- `<thead>` là phần đầu bảng, chứa tiêu đề các cột.
-- `<tbody>` là phần thân bảng, chứa dữ liệu chính.
-- `<tfoot>` là phần cuối bảng, thường dùng để tổng kết.
+- `<thead>` là phần đầu bảng, chứa tiêu đề các cột
+- `<tbody>` là phần thân bảng, chứa dữ liệu chính
+- `<tfoot>` là phần cuối bảng, thường dùng để tổng kết
 
-Ba phần này giúp bảng rõ ràng hơn, dễ đọc hơn và dễ style hơn.
+Ba phần này giúp bảng rõ ràng hơn, dễ đọc hơn và dễ style hơn
 
 2. Theo em, không nên dùng table để tạo layout vì:
 
@@ -136,3 +136,53 @@ Lỗi 14: Dòng 38 — Thẻ <p> trong footer thiếu thẻ đóng — Sửa: Th
 
 Lỗi 15: Cuối file — Thiếu thẻ đóng </html> — Sửa: Thêm </html>.
 ```
+
+# B4 - Phân tích trang web thật
+
+Em chọn trang: `thegioididong.com`
+
+1. Phân tích semantic HTML5
+
+a) Thẻ `<header>`
+
+![B4 Header](./screenshots/B4_Header.png)
+
+Thẻ `<header>` được dùng ở phần đầu trang web. Theo em, đây là khu vực đầu trang nên dùng thẻ semantic này là phù hợp
+
+b) Thẻ `<footer>`
+
+![B4 Footer](./screenshots/B4_Footer.png)
+
+Thẻ `<footer>` được dùng ở phần cuối trang web. Phần này thường chứa thông tin cuối trang nên việc dùng `<footer>` là đúng semantic
+
+c) Thẻ `<section>`
+
+![B4 Section](./screenshots/B4_Section.png)
+
+Thẻ `<section>` được dùng để chia nội dung thành từng phần trong thân trang. Theo em, đây là cách dùng hợp lý để tổ chức nội dung
+
+- 3 thẻ semantic HTML5 mà trang đó sử dụng
+1. Thẻ `<header>` — nằm ở phần đầu trang
+2. Thẻ `<footer>` — nằm ở phần cuối trang
+3. Thẻ `<section>` — nằm ở khu vực nội dung trong thân trang
+
+2. Phân tích table
+
+![B4 Table](./screenshots/B4_Table.png)
+
+Table này hiển thị nội dung về **thông số (ký hiệu) và tên đầy đủ** trong phần nội dung của trang
+
+- Có dùng `<thead>`: **Có**
+- Có dùng `<tbody>`: **Có**
+
+3. Phân tích form
+
+![B4 Form](./screenshots/B4_Form.png)
+
+Form này là form tìm kiếm trên trang
+
+- Form đó có `action`: `/tim-kiem`
+- Các input types được dùng: `text`, `submit`
+
+**Nguồn tham chiếu: Phần 1, 2, 3**
+**Nguồn quan sát thực tế: Chrome DevTools (F12) trên `thegioididong.com`**
