@@ -103,3 +103,36 @@ Ba phần này giúp bảng rõ ràng hơn, dễ đọc hơn và dễ style hơn
 - Làm layout nên dùng CSS Flexbox hoặc CSS Grid sẽ hợp lý hơn
 
 **Nguồn tham chiếu: Phần 3, 5, 7, 9**
+
+# B3 - Debug HTML
+```text
+Lỗi 1: Dòng 1 — Thiếu khai báo html trong DOCTYPE — Sửa: Thay <!DOCTYPE> bằng <!DOCTYPE html>.
+
+Lỗi 2: Dòng 2 — Thẻ <html> thiếu thuộc tính ngôn ngữ — Sửa: Đổi <html> thành <html lang="vi">.
+
+Lỗi 3: Dòng 4 — Thiếu thẻ đóng cho <title> — Sửa: Thêm </title> sau nội dung tiêu đề.
+
+Lỗi 4: Dòng 5 — Sai định dạng thuộc tính charset — Sửa: Thay utf8 bằng UTF-8.
+
+Lỗi 5: Phần <head> thiếu thẻ viewport — Sửa: Thêm <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+
+Lỗi 6: Dòng 8 — Thẻ <h1> không được đóng đúng cách — Sửa: Đổi <h1>Welcome to ShopTLU<h1> thành <h1>Welcome to ShopTLU</h1>.
+
+Lỗi 7: Dòng 12 — Thẻ <a> đầu tiên thiếu thẻ đóng — Sửa: Đổi <a href="home">Trang chủ<a> thành <a href="home">Trang chủ</a>.
+
+Lỗi 8: Dòng 17 — Thuộc tính src của ảnh thiếu dấu ngoặc kép — Sửa: Đổi thành <img src="iphone.jpg">.
+
+Lỗi 9: Dòng 17 — Thẻ <img> thiếu thuộc tính alt — Sửa: Thêm alt="iPhone 16 Pro".
+
+Lỗi 10: Dòng 19 — Sai thứ tự đóng thẻ lồng nhau — Sửa: Đổi <p>Giá: <b>25.990.000đ</p></b> thành <p>Giá: <strong>25.990.000đ</strong></p>.
+
+Lỗi 11: Dòng 25–26 — Hàng tiêu đề bảng dùng <td> thay vì <th> — Sửa: Đổi hai ô tiêu đề thành <th>Tên</th> và <th>Giá</th>.
+
+Lỗi 12: Phần bảng thiếu cấu trúc semantic — Sửa: Bổ sung <thead> và <tbody> cho bảng.
+
+Lỗi 13: Dòng 34 — Dùng thẻ <main> lần thứ hai — Sửa: Đổi phần sidebar thành <aside>.
+
+Lỗi 14: Dòng 38 — Thẻ <p> trong footer thiếu thẻ đóng — Sửa: Thêm </p>.
+
+Lỗi 15: Cuối file — Thiếu thẻ đóng </html> — Sửa: Thêm </html>.
+```
