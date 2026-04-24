@@ -102,9 +102,9 @@ Ba phần này giúp bảng rõ ràng hơn, dễ đọc hơn và dễ style hơn
 - Code sẽ khó sửa và khó bảo trì hơn
 - Làm layout nên dùng CSS Flexbox hoặc CSS Grid sẽ hợp lý hơn
 
-**Nguồn tham chiếu: Phần 3, 5, 7, 9**
+**Nguồn tham chiếu: Chương 5 Phần 3, 5, 7, 9**
 
-# B3 - Debug HTML
+# Câu B3 - Debug HTML
 ```text
 Lỗi 1: Dòng 1 — Thiếu khai báo html trong DOCTYPE — Sửa: Thay <!DOCTYPE> bằng <!DOCTYPE html>.
 
@@ -137,7 +137,7 @@ Lỗi 14: Dòng 38 — Thẻ <p> trong footer thiếu thẻ đóng — Sửa: Th
 Lỗi 15: Cuối file — Thiếu thẻ đóng </html> — Sửa: Thêm </html>.
 ```
 
-# B4 - Phân tích trang web thật
+# Câu B4 - Phân tích trang web thật
 
 Em chọn trang: `thegioididong.com`
 
@@ -184,6 +184,135 @@ Form này là form tìm kiếm trên trang
 - Form đó có `action`: `/tim-kiem`
 - Các input types được dùng: `text`, `submit`
 
-**Nguồn tham chiếu: Phần 1, 2, 3**
+**Nguồn tham chiếu: Chương 4 Phần 1, 2, 3 và Chương 5 Phần 3**
 
 **Nguồn quan sát thực tế: Chrome DevTools (F12) trên `thegioididong.com`**
+
+# Câu C1 - Thiết kế cấu trúc
+
+```html
+<header> <!-- header vì đây là phần đầu trang -->
+    <nav> <!-- nav vì đây là menu điều hướng -->
+        <ul> <!-- ul vì menu là danh sách link -->
+            <li><a href="/">Trang chủ</a></li> <!-- a để chuyển trang -->
+            <li><a href="/dien-thoai">Điện thoại</a></li>
+            <li><a href="/lien-he">Liên hệ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main> <!-- main vì đây là nội dung chính của trang -->
+    <nav aria-label="breadcrumb"> <!-- nav vì breadcrumb cũng là điều hướng -->
+        <ol> <!-- ol vì breadcrumb có thứ tự -->
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/dien-thoai">Điện thoại</a></li>
+            <li><a href="/iphone-16">iPhone 16</a></li>
+        </ol>
+    </nav>
+
+    <section> <!-- section này là khu vực ảnh sản phẩm -->
+        <h1>Tên sản phẩm</h1> <!-- h1 vì đây là tiêu đề chính của trang -->
+        
+        <figure> <!-- figure để chứa ảnh -->
+            <img src="anh1.jpg" alt="Ảnh sản phẩm 1"> <!-- img để hiện ảnh -->
+            <figcaption>Ảnh 1</figcaption> <!-- figcaption để ghi chú ảnh -->
+        </figure>
+
+        <figure>
+            <img src="anh2.jpg" alt="Ảnh sản phẩm 2">
+            <figcaption>Ảnh 2</figcaption>
+        </figure>
+
+        <figure>
+            <img src="anh3.jpg" alt="Ảnh sản phẩm 3">
+            <figcaption>Ảnh 3</figcaption>
+        </figure>
+
+        <figure>
+            <img src="anh4.jpg" alt="Ảnh sản phẩm 4">
+            <figcaption>Ảnh 4</figcaption>
+        </figure>
+
+        <figure>
+            <img src="anh5.jpg" alt="Ảnh sản phẩm 5">
+            <figcaption>Ảnh 5</figcaption>
+        </figure>
+    </section>
+
+    <section> <!-- section này là phần thông tin sản phẩm -->
+        <h2>Thông tin sản phẩm</h2> <!-- h2 vì đây là tiêu đề phụ -->
+        <p>Tên sản phẩm</p> <!-- p để ghi thông tin ngắn -->
+        <p>Giá sản phẩm</p>
+        <p>Đánh giá sao</p>
+        <p>Mô tả sản phẩm</p>
+    </section>
+
+    <section> <!-- section này là bảng thông số kỹ thuật -->
+        <h2>Thông số kỹ thuật</h2>
+        <table> <!-- table vì đây là dữ liệu dạng bảng -->
+            <thead> <!-- thead là phần tiêu đề bảng -->
+                <tr> <!-- tr là một hàng -->
+                    <th>Thông số</th> <!-- th là ô tiêu đề -->
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+            <tbody> <!-- tbody là phần dữ liệu chính -->
+                <tr>
+                    <td>Màn hình</td> <!-- td là ô dữ liệu -->
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>Chip</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>Bộ nhớ</td>
+                    <td>...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section> <!-- section này là phần đánh giá và bình luận -->
+        <h2>Đánh giá / bình luận</h2>
+
+        <article> <!-- article vì mỗi bình luận có thể xem là một nội dung riêng -->
+            <h3>Bình luận 1</h3>
+            <p>Nội dung bình luận</p>
+        </article>
+
+        <article>
+            <h3>Bình luận 2</h3>
+            <p>Nội dung bình luận</p>
+        </article>
+    </section>
+
+    <aside> <!-- aside vì đây là phần sản phẩm tương tự ở bên cạnh -->
+        <h2>Sản phẩm tương tự</h2>
+        <ul> <!-- ul vì đây là danh sách sản phẩm -->
+            <li><a href="/sp1">Sản phẩm 1</a></li>
+            <li><a href="/sp2">Sản phẩm 2</a></li>
+            <li><a href="/sp3">Sản phẩm 3</a></li>
+        </ul>
+    </aside>
+</main>
+
+<footer> <!-- footer vì đây là phần cuối trang -->
+    <p>Thông tin cuối trang</p>
+</footer>
+```
+Những chỗ trống và ảnh khi có thì có thể thực hiện, đối với ảnh thì nếu muốn có ảnh để nhét tạm vào mà chưa có ảnh để minh họa thì dùng placeholder
+
+# Câu C2 — So sánh & Tranh luận
+
+Theo em, ý kiến “chỉ cần dùng `<div>` cho mọi thứ rồi thêm class là đủ” là chưa đúng. Cách đó có thể làm trang web vẫn hiển thị được, nhưng về mặt kỹ thuật thì semantic HTML vẫn rất quan trọng.
+
+Lý do thứ nhất là **SEO**. Google không chỉ đọc chữ trên trang mà còn đọc cấu trúc HTML để hiểu đâu là phần đầu trang, đâu là menu, đâu là nội dung chính, đâu là bài viết hoặc sản phẩm. Nếu tất cả đều là `<div>` thì Google sẽ khó hiểu ý nghĩa của từng phần hơn. Ngược lại, khi dùng các thẻ như `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`, cấu trúc trang sẽ rõ ràng hơn và có lợi hơn cho SEO.
+
+Lý do thứ hai là **Accessibility**. Các công cụ hỗ trợ như screen reader dùng semantic HTML để giúp người dùng khiếm thị điều hướng nhanh hơn. Ví dụ, nếu một khu vực là menu thì dùng `<nav>` sẽ dễ hiểu hơn nhiều so với `<div class="menu">`. Tương tự, nếu một sản phẩm hoặc bài viết dùng `<article>` thì công cụ hỗ trợ cũng hiểu đây là một nội dung độc lập.
+
+Ví dụ cụ thể là một trang bán hàng. Nếu mỗi sản phẩm được bọc trong `<article>`, tên sản phẩm dùng heading, ảnh đặt trong `<figure>`, thì cấu trúc sẽ rõ ràng hơn cho cả Google lẫn người dùng.
+
+Tuy nhiên, không phải lúc nào cũng phải tránh `<div>`. Theo em, `<div>` vẫn phù hợp khi chỉ cần một khối để nhóm nội dung phục vụ CSS hoặc layout, ví dụ như một wrapper để căn giữa nội dung hoặc chia bố cục đơn giản.
+
+**Nguồn tham chiếu: Chương 4 Phần 1, 7, 9**
