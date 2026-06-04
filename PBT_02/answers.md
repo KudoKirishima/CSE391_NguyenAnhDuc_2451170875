@@ -154,3 +154,34 @@ Cách 2 dùng `<figure>` + `<figcaption>` thì phù hợp khi ảnh cần có ch
 Theo em, nếu ảnh chỉ để hiển thị đơn giản thì dùng `<img>` là đủ. Nếu ảnh cần mô tả thêm hoặc có chú thích liên quan thì nên dùng `<figure>` và `<figcaption>`.
 
 **Nguồn tham chiếu:** `tuan_1_html5/06_graphics_multimedia.md` — phần `2. Big Picture — Bản đồ Media trong HTML`; phần `3. Core Technical Truth`; phần `9. Summary — 5 điều quan trọng nhất`.
+
+# Câu C1 — Debug Form
+
+Lỗi 1: Thẻ `<form>` thiếu `action` và `method`.  
+Sửa: `<form action="#" method="POST">`
+
+Lỗi 2: Input “Tên” không có `<label>`, `id`, `name`, và chưa có `required`.  
+Sửa: `<label for="name">Tên:</label> <input type="text" id="name" name="name" required>`
+
+Lỗi 3: Input email không có `<label>`, `id`, `name`, và nên có `required`.  
+Sửa: `<label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Email của bạn" required>`
+
+Lỗi 4: Hai ô password không có `<label>`, `id`, `name` rõ ràng.  
+Sửa: thêm label, id, name cho từng ô.
+
+Lỗi 5: Ô password thiếu validation cơ bản như `required` và `minlength`.  
+Sửa: `<input type="password" id="password" name="password" required minlength="8">`
+
+Lỗi 6: Số điện thoại đang dùng `type="text"` chưa phù hợp.  
+Sửa: đổi thành `type="tel"` và thêm `pattern="[0-9]{10}"`.
+
+Lỗi 7: `<select>` chưa có `<label>` và chưa có option mặc định.  
+Sửa: thêm `<label for="city">` và option `-- Chọn thành phố --`.
+
+Lỗi 8: Phần “Tôi đồng ý điều khoản” chưa có checkbox và chưa bắt buộc chọn.  
+Sửa:
+```html
+<label for="agree">
+    <input type="checkbox" id="agree" name="agree" required>
+    Tôi đồng ý điều khoản
+</label>
