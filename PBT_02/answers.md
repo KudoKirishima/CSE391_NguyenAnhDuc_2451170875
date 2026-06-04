@@ -185,6 +185,7 @@ Sửa:
     <input type="checkbox" id="agree" name="agree" required>
     Tôi đồng ý điều khoản
 </label>
+```
 
 # Câu C2 — Thiết kế chiến lược Validation
 ## 1) Pattern regex
