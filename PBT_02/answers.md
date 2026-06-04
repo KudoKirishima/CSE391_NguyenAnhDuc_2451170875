@@ -185,3 +185,14 @@ Sửa:
     <input type="checkbox" id="agree" name="agree" required>
     Tôi đồng ý điều khoản
 </label>
+
+# Câu C2 — Thiết kế chiến lược Validation
+## 1) Pattern regex
+- CMND/CCCD đúng 12 chữ số:    `pattern="[0-9]{12}"`
+- Số tài khoản từ 10 đến 15 chữ số:    `pattern="[0-9]{10,15}"`
+## 2) HTML5 validation đã đủ an toàn cho ứng dụng ngân hàng chưa?
+Theo em là **chưa đủ**. HTML5 validation chỉ chạy ở phía trình duyệt nên người dùng có thể sửa HTML, tắt validation hoặc gửi request bằng công cụ khác. Vì vậy vẫn phải kiểm tra lại ở backend.
+## 3) Ba loại validation HTML5 không thể tự làm tốt
+1. So sánh hai trường với nhau, ví dụ nhập lại PIN có giống PIN hay không.  2. Kiểm tra logic phức tạp phụ thuộc nhiều điều kiện khác nhau.  3. Kiểm tra dữ liệu theo thời gian thực như báo độ mạnh của PIN/mật khẩu.
+## 4) Hai rủi ro bảo mật nếu chỉ validate ở Frontend
+1. Người dùng có thể bypass validation và gửi dữ liệu sai lên server.  2. Dữ liệu độc hại hoặc dữ liệu không hợp lệ có thể đi vào hệ thống.
