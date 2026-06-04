@@ -1,7 +1,7 @@
 # Câu A1 — 3 Cách nhúng CSS
 ## 1) Inline CSS
 Ví dụ code:
-```
+```html
     <h1 style="color: blue;">ShopTLU</h1>
 ```
 Ưu điểm:
@@ -18,7 +18,7 @@ Khi nào nên dùng:
 
 ## 2) Internal CSS
 Ví dụ code:
-```
+```html
     <head>
         <style>
             h1 {                
@@ -40,13 +40,13 @@ Khi nào nên dùng:
 
 ## 3) External CSS
 Ví dụ code trong HTML:
-```
+```html
     <head>
         <link rel="stylesheet" href="style.css">    
     </head>
 ```
 Ví dụ code trong file CSS:
-```
+```css
     h1 {        
         color: blue;    
     }
