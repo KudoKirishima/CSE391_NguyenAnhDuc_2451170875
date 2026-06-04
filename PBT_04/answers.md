@@ -102,3 +102,106 @@ Text art:
 | item 1 | item 2 | item 3 |
 | item 4 | item 5 | item 6 |
 | item 7 |        |        |
+
+# Câu C1 — Flexbox vs Grid: Khi nào dùng gì?
+
+1. Navigation bar ngang (logo + menu + buttons)  
+→ Dùng Flexbox  
+Vì đây là layout một chiều theo hàng ngang. Flexbox rất hợp để căn trái, giữa, phải và căn giữa theo chiều dọc.
+
+2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)  
+→ Dùng Grid  
+Vì đây là layout dạng lưới, cần chia cột đều nhau và các item có thể tự xuống hàng.
+
+3. Layout blog: main content + sidebar  
+→ Dùng Grid  
+Vì đây là bố cục chia cột rõ ràng, Grid giúp chia vùng main và sidebar dễ hơn.
+
+4. Footer với 4 cột thông tin  
+→ Dùng Grid  
+Vì footer có nhiều cột song song, Grid giúp chia 4 cột đều nhau gọn hơn.
+
+5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)  
+→ Dùng Flexbox  
+Vì bên trong card là bố cục một chiều từ trên xuống dưới. Dùng flex-direction: column và margin-top: auto cho nút là phù hợp.
+
+# Câu C2 — Debug Flexbox
+
+## Lỗi 1: Cards không đều chiều cao, nút "Mua" bị nhảy lên/xuống
+
+Nguyên nhân:  
+Các card có lượng nội dung khác nhau nên chiều cao mỗi card khác nhau. Ngoài ra, nút chưa được đẩy xuống cuối card nên vị trí không đều.
+
+Cách sửa:
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        width: 30%;
+        margin: 1.5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .card .btn {
+        padding: 10px;
+        margin-top: auto;
+    }
+
+Giải thích:  
+- display: flex và flex-direction: column trên .card giúp sắp xếp nội dung theo chiều dọc  
+- margin-top: auto đẩy nút xuống cuối card  
+
+## Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+
+Nguyên nhân:  
+Container .hero mới chỉ có display: flex nhưng chưa có thuộc tính căn giữa theo chiều ngang và chiều dọc.
+
+Cách sửa:
+
+    .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+Giải thích:  
+- justify-content: center căn giữa theo chiều ngang  
+- align-items: center căn giữa theo chiều dọc  
+
+## Lỗi 3: Sidebar bị co lại khi content quá dài
+
+Nguyên nhân:  
+Trong Flexbox, item có thể bị co nếu không chặn việc co lại. Sidebar đang có width: 250px nhưng vẫn có thể bị shrink.
+
+Cách sửa:
+
+    .layout {
+        display: flex;
+    }
+
+    .sidebar {
+        width: 250px;
+        flex-shrink: 0;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+Giải thích:  
+- flex-shrink: 0 giúp sidebar giữ nguyên chiều rộng 250px  
+- .content dùng flex: 1 để chiếm phần không gian còn lại  
