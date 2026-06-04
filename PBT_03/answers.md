@@ -179,3 +179,64 @@ Ví dụ:
 
 thì element sẽ có **màu đen**.  
 Lý do là `!important` có độ ưu tiên cao hơn các rule thông thường khác.
+
+# Câu B1 — Các loại selector đã dùng
+
+Trong file `style.css`, em đã dùng ít nhất 5 loại selector khác nhau:
+
+1. **Element selector**: `body`, `header`, `main`, `footer`
+2. **Class selector**: `.active`
+3. **ID selector**: `#profile-title`
+4. **Descendant selector**: `nav a`, `table th`, `table td`
+5. **Pseudo-class selector**: `nav a:hover`, `tbody tr:nth-child(even)`, `tbody tr:hover`
+
+# Câu B2 — Box Model Lab
+
+## Phần 1
+
+Hộp 1 (content-box): chiều rộng thực tế = `350px`  
+Hộp 2 (border-box): chiều rộng thực tế = `300px`
+
+Giải thích sự khác biệt:
+- Với `content-box`, `width: 300px` chỉ tính cho phần content, nên phải cộng thêm `padding` và `border`
+- Với `border-box`, `width: 300px` đã bao gồm cả content, padding và border
+
+## Phần 2
+
+Layout 3 cột không dùng `border-box` bị vượt quá `1000px` vì:
+- Cột trái: `250 + 15 + 15 = 280px`
+- Cột giữa: `500 + 20 + 20 = 540px`
+- Cột phải: `250 + 15 + 15 = 280px`
+
+Tổng thực tế:
+- `280 + 540 + 280 = 1100px`
+
+Vì tổng lớn hơn `1000px` nên layout bị vỡ.
+
+Khi dùng `border-box`, padding nằm bên trong chiều rộng đã khai báo nên tổng 3 cột vẫn đúng `1000px`.
+
+# Câu B3 — Specificity Battle
+
+## 1) 10 rules + specificity score
+
+1. `*` → `(0, 0, 0)`
+2. `p` → `(0, 0, 1)`
+3. `body p` → `(0, 0, 2)`
+4. `.text` → `(0, 1, 0)`
+5. `.highlight` → `(0, 1, 0)`
+6. `p.text` → `(0, 1, 1)`
+7. `p.highlight` → `(0, 1, 1)`
+8. `.text.highlight` → `(0, 2, 0)`
+9. `#demo` → `(1, 0, 0)`
+10. `p#demo.text.highlight` → `(1, 2, 1)`
+
+## 2) Element cuối cùng hiển thị màu gì? Tại sao?
+
+Element cuối cùng hiển thị **màu deeppink**.  
+Lý do là selector `p#demo.text.highlight` có specificity cao nhất nên thắng các rule còn lại.
+
+## 3) Nếu thay đổi thứ tự rules trong CSS file, kết quả có đổi không?
+
+Nếu chỉ thay đổi thứ tự giữa các rule có specificity khác nhau thì thường **không đổi**, vì rule có specificity cao hơn vẫn thắng.  
+Tuy nhiên, nếu đổi thứ tự giữa các rule có **cùng specificity** và cùng target một element thì rule viết sau sẽ thắng.
+

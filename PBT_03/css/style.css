@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #2563eb, #1e3a8a);
+    color: white;
+    padding: 24px;
+}
+
+#profile-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+nav a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffeb3b;
+    text-decoration: underline;
+}
+
+nav a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+main {
+    padding: 20px;
+}
+
+main section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+figure {
+    margin: 0 0 16px 0;
+}
+
+figure img {
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+thead tr {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+aside {
+    background-color: #eef2ff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 16px;
+}
