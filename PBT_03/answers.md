@@ -240,3 +240,60 @@ Lý do là selector `p#demo.text.highlight` có specificity cao nhất nên th�
 Nếu chỉ thay đổi thứ tự giữa các rule có specificity khác nhau thì thường **không đổi**, vì rule có specificity cao hơn vẫn thắng.  
 Tuy nhiên, nếu đổi thứ tự giữa các rule có **cùng specificity** và cùng target một element thì rule viết sau sẽ thắng.
 
+# Câu C1 — Debug CSS Layout
+
+Chiều rộng thực tế:
+
+Sidebar: 342px
+Content: 722px
+
+Giải thích: Tổng chiều rộng 2 cột (1064px) vượt quá chiều rộng container (960px) nên content bị đẩy xuống.
+
+Cách sửa:
+
+Cách 1: Thêm box-sizing: border-box cho tất cả phần tử.
+Cách 2: Giảm width của sidebar xuống 258px và content xuống 598px.
+
+# Câu C2 — Cascade Puzzle
+
+## 1) "Sản phẩm A" (h2) có font-size và color là gì?
+
+- font-size = 20px
+- color = green
+
+Giải thích:
+
+- font-size: 20px đến từ rule .card .title
+- #featured .title đặt màu đỏ
+- Nhưng .highlight { color: green !important; } có !important nên thắng và màu cuối cùng là xanh lá
+
+## 2) "Mô tả sản phẩm" (p trong card featured) có color là gì?
+
+- color = blue
+
+Giải thích:
+
+- .card { color: blue; } đặt màu xanh cho card
+- p bên trong card có rule .card p { color: inherit; }
+- inherit nghĩa là lấy màu từ cha, nên paragraph này nhận màu xanh từ .card
+
+## 3) "Sản phẩm B" (h2) có font-size và color là gì?
+
+- font-size = 20px
+- color = blue
+
+Giải thích:
+
+- font-size vẫn lấy từ .card .title
+- h2 này không có highlight, cũng không nằm trong #featured
+- Nên màu được kế thừa từ .card, tức là màu xanh
+
+## 4) "Mô tả sản phẩm B" (p.highlight) có color là gì?
+
+- color = green
+
+Giải thích:
+
+- .card p { color: inherit; } sẽ làm paragraph lấy màu xanh từ .card
+- nhưng paragraph này có class highlight
+- .highlight { color: green !important; } có !important, nên thắng và màu cuối cùng là xanh lá
