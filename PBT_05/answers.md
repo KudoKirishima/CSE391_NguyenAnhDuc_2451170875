@@ -167,7 +167,7 @@ Cần có bước **compile SCSS → CSS**, có thể dùng:
 - Live Sass Compiler trong VS Code
 - hoặc lệnh như `npx sass style.scss style.css`
 
-# Ghi chú B3 — SCSS Refactor
+# Câu B3 — SCSS Refactor
 
 ## Variables đã dùng
 Em tạo các variables như:
@@ -200,3 +200,157 @@ Em tạo 3 mixins:
 Lệnh compile em dùng là:
 
     npx sass scss/style.scss scss/style.css --watch
+
+# Câu C1 — Phân tích trang web thực
+
+Em chọn trang: Shopee
+
+## 1) Ở kích thước Mobile, khoảng 375px
+- Navigation thay đổi: menu đầy đủ không hiện hết như desktop, giao diện ưu tiên thanh tìm kiếm và các nút quan trọng hơn
+- Lưới content thay đổi: số cột sản phẩm giảm xuống, thường còn 1 hoặc 2 cột tùy khu vực
+- Elements bị ẩn trên mobile: một số banner lớn, menu phụ hoặc thông tin ít quan trọng có thể bị ẩn hoặc rút gọn
+- Font size: font thường nhỏ gọn hơn desktop để phù hợp màn hình nhỏ
+
+## 2) Ở kích thước Tablet, khoảng 768px
+- Navigation thay đổi: vẫn là dạng ngang nhưng thoáng hơn mobile, có thể hiện được nhiều menu hơn
+- Lưới content thay đổi: thường tăng lên 2 hoặc 3 cột
+- Elements bị ẩn: ít hơn mobile, nhưng vẫn có thể rút gọn một số phần phụ
+- Font size: lớn hơn mobile một chút, dễ đọc hơn
+
+## 3) Ở kích thước Desktop, khoảng 1440px
+- Navigation thay đổi: menu đầy đủ, hiển thị ngang rõ ràng
+- Lưới content thay đổi: nhiều cột hơn, thường 4 hoặc 5 cột tùy khu vực
+- Elements bị ẩn: gần như không bị ẩn, nhiều thành phần được hiển thị đầy đủ hơn
+- Font size: nhìn chung thoáng hơn và cân đối hơn mobile
+
+## 4) Media queries quan sát được
+Sau khi mở DevTools và xem phần Styles, em thấy trang có dùng media queries để thay đổi layout theo chiều rộng màn hình, ví dụ:
+- media query cho màn hình nhỏ hơn để giảm số cột
+- media query cho màn hình lớn hơn để tăng số cột và hiện thêm nội dung
+
+# Câu C2 — Thiết kế Responsive Strategy
+
+## 1) Wireframe cho Mobile
+
+    ┌────────────────────────┐
+    │ Logo + nút gọi đặt bàn │
+    ├────────────────────────┤
+    │      Hero image        │
+    ├────────────────────────┤
+    │     Form đặt bàn       │
+    ├────────────────────────┤
+    │   Grid ảnh món ăn 1 cột│
+    ├────────────────────────┤
+    │     Google Maps        │
+    ├────────────────────────┤
+    │       Footer           │
+    └────────────────────────┘
+
+Theo em ở mobile:
+- không nên hiện quá nhiều phần ngang
+- form nên đặt sớm để người dùng thao tác nhanh
+- grid ảnh nên để 1 cột
+- bản đồ nên để bên dưới
+- không cần sidebar riêng
+
+## 2) Wireframe cho Tablet
+
+    ┌──────────────────────────────────┐
+    │ Logo + số điện thoại đặt bàn     │
+    ├──────────────────────────────────┤
+    │            Hero image            │
+    ├──────────────────────────────────┤
+    │         Form đặt bàn             │
+    ├──────────────────────────────────┤
+    │      Grid ảnh món ăn 2 cột       │
+    ├──────────────────────────────────┤
+    │          Google Maps             │
+    ├──────────────────────────────────┤
+    │             Footer               │
+    └──────────────────────────────────┘
+
+Theo em ở tablet:
+- vẫn ưu tiên form nằm trên
+- ảnh món ăn có thể chia 2 cột
+- bản đồ để dưới form hoặc dưới gallery
+- layout chưa cần chia nhiều cột như desktop
+
+## 3) Wireframe cho Desktop
+
+    ┌──────────────────────────────────────────────────┐
+    │ Logo                     Số điện thoại đặt bàn   │
+    ├──────────────────────────────────────────────────┤
+    │                  Hero image toàn trang           │
+    ├──────────────────────────────┬───────────────────┤
+    │      Grid ảnh món ăn         │    Form đặt bàn  │
+    │          3 cột               │                   │
+    ├──────────────────────────────┴───────────────────┤
+    │                 Google Maps full width           │
+    ├──────────────────────────────────────────────────┤
+    │                     Footer                       │
+    └──────────────────────────────────────────────────┘
+
+Theo em ở desktop:
+- có thể chia 2 cột lớn, một bên là ảnh món ăn, một bên là form đặt bàn
+- grid ảnh có thể 3 cột
+- bản đồ đặt full width phía dưới
+- không cần sidebar riêng nếu trang chỉ tập trung vào đặt bàn và xem món
+
+## 4) CSS skeleton theo Mobile-First
+```
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .header,
+    .hero,
+    .booking-form,
+    .gallery,
+    .map,
+    .footer {
+        background: #f3f4f6;
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+```
+## 5) Giải thích ngắn
+- Mobile mặc định dùng 1 cột để dễ đọc và dễ thao tác
+- Tablet tăng lên 2 cột cho gallery
+- Desktop chia khu vực ảnh và form thành 2 cột lớn
+- Cách này đúng theo hướng Mobile-First, viết từ nhỏ đến lớn bằng min-width
