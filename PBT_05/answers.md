@@ -166,3 +166,37 @@ Trình duyệt chỉ đọc được CSS, không đọc trực tiếp được S
 Cần có bước **compile SCSS → CSS**, có thể dùng:
 - Live Sass Compiler trong VS Code
 - hoặc lệnh như `npx sass style.scss style.css`
+
+# Ghi chú B3 — SCSS Refactor
+
+## Variables đã dùng
+Em tạo các variables như:
+- `$primary-color`
+- `$secondary-color`
+- `$surface-color`
+- `$text-color`
+- `$font-primary`
+- `$breakpoint-tablet`
+- `$breakpoint-desktop`
+- `$spacing-sm`, `$spacing-md`, `$spacing-lg`
+
+## Nesting
+Em dùng nesting trong các block như:
+- `.site-header`
+- `.nav-menu`
+- `.card`
+
+Em cũng dùng parent selector `&` trong:
+- `&:hover`
+- `&.featured`
+
+## Mixins
+Em tạo 3 mixins:
+- `respond-to($breakpoint)`
+- `flex-center`
+- `card-shadow`
+
+## Compile SCSS → CSS
+Lệnh compile em dùng là:
+
+    npx sass scss/style.scss scss/style.css --watch
