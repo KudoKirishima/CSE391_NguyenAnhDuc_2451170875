@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">ShopBootstrap</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto ms-3">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Khuyến mãi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm">
+                    <button class="btn btn-outline-light" type="submit">Tìm</button>
+                </form>
+
+                <a href="#" class="btn btn-warning position-relative">
+                    Giỏ hàng
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://placehold.co/1600x500?text=Banner+1" class="d-block w-100" alt="Banner 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Khuyến mãi lớn</h2>
+                    <p>Mua sắm cùng Bootstrap</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://placehold.co/1600x500?text=Banner+2" class="d-block w-100" alt="Banner 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Sản phẩm mới</h2>
+                    <p>Nhiều ưu đãi hấp dẫn</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://placehold.co/1600x500?text=Banner+3" class="d-block w-100" alt="Banner 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Giảm giá cuối tuần</h2>
+                    <p>Đừng bỏ lỡ cơ hội</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Sản phẩm nổi bật</h1>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm position-relative">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Sản phẩm 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Sản phẩm 1</h5>
+                        <p class="card-text">Mô tả ngắn sản phẩm</p>
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm position-relative">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Sản phẩm 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Sản phẩm 2</h5>
+                        <p class="card-text">Mô tả ngắn sản phẩm</p>
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm position-relative">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Sản phẩm 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Sản phẩm 3</h5>
+                        <p class="card-text">Mô tả ngắn sản phẩm</p>
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm position-relative">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Sản phẩm 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Sản phẩm 4</h5>
+                        <p class="card-text">Mô tả ngắn sản phẩm</p>
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Đây là nội dung xem nhanh của sản phẩm</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button class="btn btn-primary">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <h5>Về chúng tôi</h5>
+                    <p class="mb-0">Shop Bootstrap demo</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <h5>Chính sách</h5>
+                    <p class="mb-0">Bảo hành, đổi trả</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <h5>Hỗ trợ</h5>
+                    <p class="mb-0">Hotline, email</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <h5>Liên hệ</h5>
+                    <p class="mb-0">Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
